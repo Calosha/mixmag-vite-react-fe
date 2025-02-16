@@ -22,7 +22,9 @@ export default ({ mode }) => {
                 input: {
                     main: 'index.html',
                     articles: 'articles.html',
-                    article: 'article.html'
+                    article: 'article.html',
+                    news: 'news.html',
+                    newsItem: 'news-item.html'
                 }
             }
         }
