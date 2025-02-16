@@ -5,7 +5,7 @@ export default ({ mode }) => {
     console.log('VITE_BASE_PATH:', env.VITE_BASE_PATH)
 
     return {
-        base: env.VITE_BASE_PATH || '/',
+        base: '/mixmag/',
         server: {
             proxy: {
                 '/mixmag/api': {
