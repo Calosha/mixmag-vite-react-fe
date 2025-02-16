@@ -1,9 +1,3 @@
-import { updatePaths } from './utils.js';
-import { basePath } from './utils.js';
-updatePaths();
-console.log('API URL:', import.meta.env.VITE_API_URL);
-const apiUrl = import.meta.env.VITE_API_URL;
-
 async function fetchArticle() {
     try {
         const urlParams = new URLSearchParams(window.location.search);
