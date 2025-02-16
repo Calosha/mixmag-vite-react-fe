@@ -1,6 +1,6 @@
 async function fetchArticles() {
     try {
-        const response = await fetch('/api/articles');
+        const response = await fetch('/mixmag/api/articles');
         const articles = await response.json();
 
         const articlesDiv = document.getElementById('articles');

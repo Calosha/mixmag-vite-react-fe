@@ -5,7 +5,7 @@ async function fetchArticle() {
 
         if (!id) throw new Error('Article ID not found');
 
-        const response = await fetch(`/api/articles/${id}`);
+        const response = await fetch(`/mixmag/api/articles/${id}`);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
         const article = await response.json();

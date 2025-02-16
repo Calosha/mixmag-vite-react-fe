@@ -8,8 +8,9 @@ export default ({ mode }) => {
         base: env.VITE_BASE_PATH || '/',
         server: {
             proxy: {
-                '/api': {
+                '/mixmag/api': {
                     target: 'http://localhost:3000',
+                    rewrite: (path) => path.replace(/^\/mixmag\/api/, '/api'),
                     changeOrigin: true
                 }
             }
