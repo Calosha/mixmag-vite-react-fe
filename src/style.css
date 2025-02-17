@@ -1,4 +1,4 @@
-css * {
+* {
     margin: 0;
     padding: 0;
 }
@@ -20,20 +20,47 @@ body {
     min-height: 100vh;
 }
 
+/* Navigation */
 .nav-items {
     display: flex;
-    gap: 20px;
-    align-items: center;
-    background: #e5e5e5;
-    padding: 10px 0;
+    gap: 2px;
+    background: #f5f5f5;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .nav-items a {
     text-decoration: none;
     color: #333;
-    padding: 5px 10px;
+    padding: 12px 24px;
+    transition: all 0.2s ease;
+    position: relative;
+    font-weight: 500;
 }
 
+.nav-items a:hover {
+    background: #6D79A0;
+    color: white;
+}
+
+.nav-items a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #b41529;
+    transition: all 0.2s ease;
+    transform: translateX(-50%);
+}
+
+.nav-items a:hover::after {
+    width: 100%;
+}
+
+/* Logo */
 .logo {
     color: #b41529;
     font-size: 2.5em;
@@ -43,13 +70,12 @@ body {
     text-decoration: none;
 }
 
-/* .article {
+/* Article styles */
+.article {
+    margin: 0;
     border-bottom: 1px solid #e5e5e5;
     padding: 15px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
+}
 
 .article a {
     color: #b41529;
@@ -61,17 +87,13 @@ body {
     text-decoration: underline;
 }
 
-.date {
-    color: #999;
-    font-size: 14px;
-}
-
-/* .article-title {
+.article-title {
     font-size: 24px;
     font-weight: bold;
     color: #b41529;
-    margin-bottom: 20px;
-} */
+    margin: 0 0 20px 0;
+    text-align: center;
+}
 
 .article-announcement {
     font-size: 16px;
@@ -90,22 +112,12 @@ body {
     font-size: 14px;
 }
 
-.article {
-    margin: 0;
-    /* Remove top margin */
-    border-bottom: 1px solid #e5e5e5;
-    padding: 15px 0;
+.date {
+    color: #999;
+    font-size: 14px;
 }
 
-.article-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #b41529;
-    margin: 0 0 20px 0;
-    /* Reset top margin, keep bottom margin */
-    text-align: center;
-}
-
+/* Motto */
 .motto {
     font-size: 20px;
     font-weight: bold;
@@ -115,6 +127,7 @@ body {
     font-style: italic;
 }
 
+/* Pagination */
 .pagination {
     display: flex;
     justify-content: center;
