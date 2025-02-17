@@ -19,7 +19,7 @@ async function fetchArticle() {
         `;
     } catch (error) {
         console.error('Error fetching article:', error);
-        document.getElementById('article').innerHTML = '<div class="error">Article not found</div>';
+        document.getElementById('article').innerHTML = '<div class="error">News item not found</div>';
     }
 }
 

@@ -1,20 +1,55 @@
-async function fetchArticles() {
+async function fetchNews(page = 1) {
     try {
-        const response = await fetch('/mixmag/api/news');
-        const articles = await response.json();
+        const response = await fetch(`/mixmag/api/news?page=${page}`);
+        const news_page = await response.json();
 
         const articlesDiv = document.getElementById('articles');
-        articles.forEach(article => {
+        articlesDiv.innerHTML = ''; // Clear existing content
+
+        news_page.items.forEach(news_item => {
             articlesDiv.innerHTML += `
                 <div class="article">
-                    <a href="news-item.html?id=${article.id}">${article.title}</a>    
-                    <div class="date">${new Date(article.pub_date * 1000).toLocaleDateString()}</div>
+                    <a href="news-item.html?id=${news_item.id}">${news_item.title}</a>    
+                    <div class="date">${new Date(news_item.pub_date * 1000).toLocaleDateString()}</div>
                 </div>
             `;
         });
+
+        const pagination = document.createElement('div');
+        pagination.className = 'pagination';
+
+        const prevButton = document.createElement('button');
+        prevButton.textContent = '←';
+        prevButton.disabled = page === 1;
+        prevButton.onclick = () => fetchNews(page - 1);
+        pagination.appendChild(prevButton);
+
+        for (let i = Math.max(1, page - 2); i <= Math.min(news_page.total_pages, page + 2); i++) {
+            const pageButton = document.createElement('button');
+            pageButton.textContent = i;
+            pageButton.className = i === page ? 'active' : '';
+            pageButton.onclick = () => fetchNews(i);
+            pagination.appendChild(pageButton);
+        }
+
+        const nextButton = document.createElement('button');
+        nextButton.textContent = '→';
+        nextButton.disabled = page === news_page.total_pages;
+        nextButton.onclick = () => fetchNews(page + 1);
+        pagination.appendChild(nextButton);
+
+        articlesDiv.appendChild(pagination);
+
+        // Update URL
+        const url = new URL(window.location);
+        url.searchParams.set('page', page);
+        window.history.pushState({}, '', url);
     } catch (error) {
-        console.error('Error fetching articles:', error);
+        console.error('Error fetching news:', error);
     }
 }
 
-fetchArticles();
+// Get initial page from URL
+const urlParams = new URLSearchParams(window.location.search);
+const initialPage = parseInt(urlParams.get('page')) || 1;
+fetchNews(initialPage);
