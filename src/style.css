@@ -114,3 +114,29 @@ body {
     text-align: center;
     font-style: italic;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    border: 1px solid #e5e5e5;
+    background: white;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background: #e5e5e5;
+    cursor: not-allowed;
+}
+
+.pagination button.active {
+    background: #b41529;
+    color: white;
+    border-color: #b41529;
+}
