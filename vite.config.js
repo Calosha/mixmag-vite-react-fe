@@ -24,6 +24,8 @@ export default ({ mode }) => {
                     articles: 'articles.html',
                     article: 'article.html',
                     news: 'news.html',
+                    cdReview: 'cd-reviews.html',
+                    cdReviewItem: 'cd-reviews-item.html',
                     newsItem: 'news-item.html'
                 }
             }
