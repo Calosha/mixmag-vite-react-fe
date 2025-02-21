@@ -1,4 +1,4 @@
-// article.js
+// articles.js
 import './common.js';
 
 async function fetchArticles() {
