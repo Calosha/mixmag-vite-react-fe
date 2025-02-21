@@ -1,3 +1,6 @@
+// news.js
+import './common.js';
+
 async function fetchNews(page = 1) {
     try {
         const response = await fetch(`/mixmag/api/news?page=${page}`);

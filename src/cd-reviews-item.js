@@ -1,3 +1,6 @@
+// cd-reviews-item.js
+import './common.js';
+
 async function fetchArticle() {
     try {
         const urlParams = new URLSearchParams(window.location.search);

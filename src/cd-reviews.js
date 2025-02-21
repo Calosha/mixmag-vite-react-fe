@@ -1,3 +1,6 @@
+// cd-reviews.js
+import './common.js';
+
 async function fetchNews(page = 1) {
     try {
         const response = await fetch(`/mixmag/api/cd_reviews?page=${page}`);
