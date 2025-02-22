@@ -9,7 +9,10 @@ async function fetchNews(page = 1) {
         news_page.items.forEach(news_item => {
             articlesDiv.innerHTML += `
                 <div class="article">
-                    <a href="cd-reviews-item.html?id=${news_item.id}">${news_item.title}</a>    
+                    <a href="cd-reviews-item.html?id=${news_item.id}">
+                        <div class="title">${news_item.title}</div>
+                        ${news_item.name ? `<div class="artist">${news_item.name}</div>` : ''}
+                    </a>
                     <div class="date">${new Date(news_item.pub_date * 1000).toLocaleDateString()}</div>
                 </div>
             `;
