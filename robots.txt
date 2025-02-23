@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alexeychernyuk.com/mixmag/sitemap.xml
