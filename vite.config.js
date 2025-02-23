@@ -27,10 +27,10 @@ export default ({ mode }) => {
                     cdReview: 'cd-reviews.html',
                     cdReviewItem: 'cd-reviews-item.html',
                     newsItem: 'news-item.html',
-                    sitemap: 'sitemap.xml',
-                    robots: 'robots.txt'
                 }
             }
-        }
+        },
+        assetsInclude: ['**/*.xml', '**/*.txt'],
+        publicDir: 'public'
     }
 }
