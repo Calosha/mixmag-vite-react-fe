@@ -26,7 +26,9 @@ export default ({ mode }) => {
                     news: 'news.html',
                     cdReview: 'cd-reviews.html',
                     cdReviewItem: 'cd-reviews-item.html',
-                    newsItem: 'news-item.html'
+                    newsItem: 'news-item.html',
+                    sitemap: 'sitemap.xml',
+                    robots: 'robots.txt'
                 }
             }
         }
