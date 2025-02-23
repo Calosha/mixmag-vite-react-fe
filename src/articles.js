@@ -1,3 +1,6 @@
+// articles.js
+import './common.js';
+
 async function fetchArticles() {
     try {
         const response = await fetch('/mixmag/api/articles');
