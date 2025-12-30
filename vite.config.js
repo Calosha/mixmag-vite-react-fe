@@ -9,7 +9,7 @@ export default ({ mode }) => {
         server: {
             proxy: {
                 '/mixmag/api': {
-                    target: 'http://localhost:3000',
+                    target: 'http://127.0.0.1:3000',
                     rewrite: (path) => path.replace(/^\/mixmag\/api/, '/api'),
                     changeOrigin: true
                 }
@@ -27,6 +27,8 @@ export default ({ mode }) => {
                     cdReview: 'cd-reviews.html',
                     cdReviewItem: 'cd-reviews-item.html',
                     newsItem: 'news-item.html',
+                    interviews: 'interviews.html',
+                    interview: 'interview.html'
                 }
             }
         },
